@@ -5,7 +5,7 @@ module.exports = {
   configFunction: function (eleventyConfig, options = {}) {
     eleventyConfig.addCollection('recentChanges', () => {
       const settings = {
-        repo: __dirname,
+        repo: options.repoDir || __dirname,
         number: options.commits || 20,
         fields: ['hash', 'abbrevHash', 'subject', 'authorName', 'authorDate']
       }
